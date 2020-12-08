@@ -108,6 +108,14 @@ namespace CA201208
             {
                 if (jatekosok[i].Szuletett < jatekosok[mini].Szuletett && jatekosok[i].Poszt == "csatár") mini = i;
             }
+            
+            /* Alternatíva a saját hozzáadott mezőmmel:
+            int maxi = 0;
+            for (int i = 1; i < jatekosok.Count; i++)
+            {
+                if (jatekosok[i].Kor > jatekosok[maxi].Kor && jatekosok[i].Poszt == "csatár") maxi = i;
+            }
+            */
 
             Console.WriteLine($"7.: A fájl létrejöttének idejében {jatekosok[mini].Nev} a legidősebb csatára a Juventusnak.");
         }
@@ -141,11 +149,20 @@ namespace CA201208
 
         private static void A4()
         {
+
             int maxi = 0;
             for (int i = 1; i < jatekosok.Count; i++)
             {
                 if (jatekosok[i].Szuletett > jatekosok[maxi].Szuletett) maxi = i;
             }
+
+            /* Alternatíva a saját hozzáadott mezőmmel:
+            int mini = 0;
+            for (int i = 1; i < jatekosok.Count; i++)
+            {
+                if (jatekosok[i].Kor < jatekosok[mini].Kor) mini = i;
+            }
+            */
 
             Console.WriteLine($"4.: A fájl létrejöttének idejében {jatekosok[maxi].Nev} a legfiatalabb játékosa a Juventusnak.");
         }
